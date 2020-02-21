@@ -1,0 +1,7 @@
+{
+  "name": "colorin-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
