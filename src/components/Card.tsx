@@ -7,7 +7,7 @@ import './Card.scss';
 interface CardProps {
 }
 
-const Card: React.FC<CardProps> = ({}) => {
+const Card: React.FC<CardProps> = () => {
   return (
     <IonCard>
       {/* <IonCardHeader>
@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({}) => {
         <IonCardTitle>Card Title</IonCardTitle>
       </IonCardHeader> */}
 
-      <IonCardContent mode="md" className="card-wrap">
+      <IonCardContent className="card-wrap">
         <div className="card-content left">
           <div className="color-box first"></div>
           <div className="color-box second"></div>

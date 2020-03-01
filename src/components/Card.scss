@@ -31,12 +31,6 @@
   .favorite {
     color: #EA5E5E;
   }
-  // TODO: globalへ移す -start
-  .icon {
-    width: 1.5em;
-    height: 1.5em;
-  }
-  // -end
   .lower {
     text-align: left;
   }
@@ -46,5 +40,6 @@
     margin-right: 1em;
     background-color: #EFEFEF;
     text-align: center;
+    font-size: .8em;
   }
 }

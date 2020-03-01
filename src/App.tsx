@@ -15,6 +15,8 @@ import { home, heart, person } from 'ionicons/icons';
 // import Tab1 from './pages/Tab1';
 // import Tab2 from './pages/Tab2';
 // import Tab3 from './pages/Tab3';
+import './App.scss';
+
 import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 import Account from './pages/Account';

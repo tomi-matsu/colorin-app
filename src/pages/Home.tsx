@@ -1,7 +1,9 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import Tab from '../components/Tab';
+import Segment from '../components/Segment';
 import ExploreContainer from '../components/ExploreContainer';
+import Fab from '../components/Fab';
+
 // import './Tab1.css';
 
 const Home: React.FC = () => {
@@ -12,15 +14,11 @@ const Home: React.FC = () => {
           <IonTitle>ホーム</IonTitle>
         </IonToolbar>
       </IonHeader>
+      <Segment />
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">ホーム</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <Tab />
         <ExploreContainer name="HOME page" />
       </IonContent>
+      <Fab />
     </IonPage>
   )
 };
