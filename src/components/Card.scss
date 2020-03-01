@@ -1,6 +1,50 @@
 .card-wrap {
   display: flex;
   .left {
-    color: red;
+    display: flex;
+    margin: auto 24px auto 0;
+  }
+  .color-box {
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.15);
+  }
+  .first {
+    background-color: #d7fffd;
+  }
+  .second {
+    background-color: #eca0b6;
+  }
+  .third {
+    margin-right: 0;
+    background-color: #fafba4;
+  }
+  .right {
+    flex: 1;
+  }
+  .upper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .favorite {
+    color: #EA5E5E;
+  }
+  // TODO: globalへ移す -start
+  .icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  // -end
+  .lower {
+    text-align: left;
+  }
+  .tag {
+    width: 3em;
+    display: inline-block;
+    margin-right: 1em;
+    background-color: #EFEFEF;
+    text-align: center;
   }
 }
