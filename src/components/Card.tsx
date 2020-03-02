@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = () => {
         <div className="card-content right">
           <div className="upper">
             <span className="date">2020/02/29</span>
-            <IonIcon icon={ heartOutline } className='icon favorite' />
+            <IonIcon icon={ heartOutline } className='icon' color="primary" />
           </div>
           <div className="lower">
             <span className="tag">青</span>

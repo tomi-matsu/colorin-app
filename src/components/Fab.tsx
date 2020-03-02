@@ -3,9 +3,9 @@ import { IonFab, IonFabButton, IonIcon } from '@ionic/react';
 import { add } from 'ionicons/icons';
 
 const Fab: React.FC = () => (
-  <IonFab vertical="bottom" horizontal="end" color="primary">
-    <IonFabButton>
-      <IonIcon icon={ add } />
+  <IonFab vertical="bottom" horizontal="end">
+    <IonFabButton color="secondary">
+      <IonIcon icon={ add } color="dark" />
     </IonFabButton>
   </IonFab>
 );
