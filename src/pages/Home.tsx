@@ -9,12 +9,12 @@ import Fab from '../components/Fab';
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader translucent>
         <IonToolbar>
           <IonTitle>ホーム</IonTitle>
         </IonToolbar>
+        <Segment />
       </IonHeader>
-      <Segment />
       <IonContent>
         <ExploreContainer name="HOME page" />
       </IonContent>

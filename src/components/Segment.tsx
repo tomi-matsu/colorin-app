@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonSegment, IonSegmentButton, IonLabel, IonIcon, IonToolbar, IonContent } from '@ionic/react';
+import { IonSegment, IonSegmentButton, IonLabel } from '@ionic/react';
 
 interface SegmentProps {
 }

@@ -1,3 +1,9 @@
+ion-card {
+  margin-bottom: 1.5em;
+  &:first-child {
+    margin-top: 1.3em;
+  }
+}
 .card-wrap {
   display: flex;
   .left {
@@ -27,6 +33,9 @@
   .upper {
     display: flex;
     justify-content: space-between;
+  }
+  .date {
+    font-size: .85em;
   }
   .favorite {
     color: #EA5E5E;
