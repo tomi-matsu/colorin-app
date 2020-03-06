@@ -1,13 +1,13 @@
 import React from 'react';
-import Card from './Card';
+import Card from '../components/Card';
 
 import './HomeContainer.scss';
 
-interface HomeContainerProps {
+interface ContainerProps {
   name: string;
 }
 
-const HomeContainer: React.FC<HomeContainerProps> = ({ name }) => {
+const HomeContainer: React.FC<ContainerProps> = ({ name }) => {
   return (
     <div className="container">
       <Card />

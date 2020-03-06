@@ -1,16 +1,13 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react';
+import Header from '../components/Header';
 import HomeContainer from '../components/HomeContainer';
 import './Tab1.css';
 
 const Favorite: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Favorite</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header />
       <IonContent>
         <HomeContainer name="Favorite page" />
       </IonContent>

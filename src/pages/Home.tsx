@@ -1,6 +1,6 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import Segment from '../components/Segment';
+import { IonContent, IonPage } from '@ionic/react';
+import Header from '../components/Header';
 import HomeContainer from '../components/HomeContainer';
 import Fab from '../components/Fab';
 
@@ -9,12 +9,7 @@ import Fab from '../components/Fab';
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader translucent>
-        <IonToolbar>
-          <IonTitle>ホーム</IonTitle>
-        </IonToolbar>
-        <Segment />
-      </IonHeader>
+      <Header />
       <IonContent>
         <HomeContainer name="HOME page" />
       </IonContent>
