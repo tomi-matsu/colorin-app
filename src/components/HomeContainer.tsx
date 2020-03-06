@@ -1,13 +1,13 @@
 import React from 'react';
-import Card from '../components/Card';
+import Card from './Card';
 
-import './ExploreContainer.scss';
+import './HomeContainer.scss';
 
-interface ContainerProps {
+interface HomeContainerProps {
   name: string;
 }
 
-const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
+const HomeContainer: React.FC<HomeContainerProps> = ({ name }) => {
   return (
     <div className="container">
       <Card />
@@ -26,4 +26,4 @@ const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
   );
 };
 
-export default ExploreContainer;
+export default HomeContainer;

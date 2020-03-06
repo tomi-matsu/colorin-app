@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import HomeContainer from '../components/HomeContainer';
 import './Tab1.css';
 
 const Favorite: React.FC = () => {
@@ -12,12 +12,7 @@ const Favorite: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Favorite</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Favorite page" />
+        <HomeContainer name="Favorite page" />
       </IonContent>
     </IonPage>
   );
