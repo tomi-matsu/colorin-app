@@ -15,21 +15,21 @@ const Card: React.FC<CardProps> = () => {
         <IonCardTitle>Card Title</IonCardTitle>
       </IonCardHeader> */}
 
-      <IonCardContent className="card-wrap">
-        <div className="card-content left">
-          <div className="color-box first"></div>
-          <div className="color-box second"></div>
-          <div className="color-box third"></div>
+      <IonCardContent className="card">
+        <div className="card__left-content">
+          <div className="card__color-box first"></div>
+          <div className="card__color-box second"></div>
+          <div className="card__color-box third"></div>
         </div>
-        <div className="card-content right">
-          <div className="upper">
-            <span className="date">2020/02/29</span>
+        <div className="card__right-content">
+          <div className="card__right-content-upper">
+            <span className="card__date">2020/02/29</span>
             <IonIcon icon={ heartOutline } className='icon' color="primary" />
           </div>
-          <div className="lower">
-            <span className="tag">青</span>
-            <span className="tag">赤</span>
-            <span className="tag">黄</span>
+          <div className="card__right-content-lower">
+            <span className="card__tag">青</span>
+            <span className="card__tag">赤</span>
+            <span className="card__tag">黄</span>
           </div>
         </div>
       </IonCardContent>
