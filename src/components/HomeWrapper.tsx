@@ -1,13 +1,13 @@
 import React from 'react';
-import Card from '../components/Card';
+import Card from './parts/Card';
 
-import './HomeContainer.scss';
+import './HomeWrapper.scss';
 
 interface ContainerProps {
   name: string;
 }
 
-const HomeContainer: React.FC<ContainerProps> = ({ name }) => {
+const HomeWrapper: React.FC<ContainerProps> = ({ name }) => {
   return (
     <div className="home-container">
       <Card />
@@ -26,4 +26,4 @@ const HomeContainer: React.FC<ContainerProps> = ({ name }) => {
   );
 };
 
-export default HomeContainer;
+export default HomeWrapper;
