@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { TextInputActions } from "../action";
 import { ItemsActions } from "../action";
 import Home from "../components/pages/Home";
 import { AppState } from "../store";
