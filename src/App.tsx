@@ -13,10 +13,9 @@ import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
 // import Home from './components/pages/Home';
+import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/Favorite';
 import Account from './components/pages/Account';
-
-import TopPageContainer from './container/TopPageContainer';
 
 import './App.scss';
 /* Core CSS required for Ionic components to work properly */
@@ -56,7 +55,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/home" component={TopPageContainer} exact={true} />
+          <Route path="/home" component={HomeContainer} exact={true} />
           <Route path="/favorite" component={Favorite} exact={true} />
           <Route path="/account" component={Account} />
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />

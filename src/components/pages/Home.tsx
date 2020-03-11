@@ -1,9 +1,9 @@
 import React from 'react';
 import { IonContent, IonPage, withIonLifeCycle } from '@ionic/react';
 import Header from '../parts/Header';
-import HomeWrapper from '../HomeWrapper';
+import HomeInner from '../HomeInner';
 import Fab from '../parts/Fab';
-import { TopPageHandler } from '../../container/TopPageContainer';
+import { TopPageHandler } from '../../container/HomeContainer';
 
 interface OwnProps {
   // title: string
@@ -24,7 +24,7 @@ export class Home extends React.Component<Props> {
         <IonPage>
           <Header />
           <IonContent>
-            <HomeWrapper name="HOME page" />
+            <HomeInner name="HOME page" />
           </IonContent>
           <Fab />
         </IonPage>

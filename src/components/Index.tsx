@@ -16,7 +16,7 @@ import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 import Account from './pages/Account';
 
-import TopPageContainer from '../container/TopPageContainer';
+import HomeContainer from '../container/HomeContainer';
 
 // /* firebase */
 // import firebase, { db } from './firebase';
@@ -38,7 +38,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/home" component={TopPageContainer} exact={true} />
+          <Route path="/home" component={HomeContainer} exact={true} />
           <Route path="/favorite" component={Favorite} exact={true} />
           <Route path="/account" component={Account} />
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
