@@ -5,14 +5,14 @@ export interface State {
     inputValue: string
     selectedValue: string
     clickCount: number
-    items: object
+    items: { name: string}
 }
 
 export const initialState: State = {
     inputValue: '',
     selectedValue: '',
     clickCount: 0,
-    items: {}
+    items: { name: 'initial'}
 }
 
 // Reduxの流れ⑤: stateの値を書き換える

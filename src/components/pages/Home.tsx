@@ -9,6 +9,7 @@ interface OwnProps {
   // title: string
   // inputValue: string
   // onChangeValue: Function
+  items: { name: string}
 }
 
 type Props =  OwnProps & TopPageHandler
@@ -25,6 +26,7 @@ export class Home extends React.Component<Props> {
           <Header />
           <IonContent>
             <HomeInner name="HOME page" />
+            <p>{ this.props.items.name }</p>
           </IonContent>
           <Fab />
         </IonPage>
