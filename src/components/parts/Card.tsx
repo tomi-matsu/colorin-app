@@ -10,8 +10,6 @@ interface CardProps {
 export class Card extends React.Component {
   ionViewWillEnter() {
     console.log('components/parts/Card !!!!!!!!!!!!!!!!')
-    // console.log(this.props)
-    // this.props.handleGetItems();
   }
 
   render(){

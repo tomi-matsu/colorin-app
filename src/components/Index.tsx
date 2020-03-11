@@ -18,21 +18,6 @@ import Account from './pages/Account';
 
 import HomeContainer from '../container/HomeContainer';
 
-// /* firebase */
-// import firebase, { db } from './firebase';
-
-// const items = db.collection("items").doc("iAHl8KwVQt7SLHiuMgqv");
-// items.get().then((doc) => {
-//   if (doc.exists) {
-//     console.log("Document data:", doc.data());
-//     this.props.handleItemsGet(doc.data())
-//   } else {
-//     console.log("No such document!");
-//   }
-// }).catch((error) => {
-//   console.log("Error getting document:", error);
-// });
-
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>

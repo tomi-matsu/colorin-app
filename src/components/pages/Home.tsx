@@ -3,7 +3,7 @@ import { IonContent, IonPage, withIonLifeCycle } from '@ionic/react';
 import Header from '../parts/Header';
 import HomeInner from '../HomeInner';
 import Fab from '../parts/Fab';
-import { TopPageHandler } from '../../container/HomeContainer';
+import { HomeHandler } from '../../container/HomeContainer';
 
 interface OwnProps {
   // title: string
@@ -11,7 +11,7 @@ interface OwnProps {
   // onChangeValue: Function
 }
 
-type Props =  OwnProps & TopPageHandler
+type Props =  OwnProps & HomeHandler
 
 export class Home extends React.Component<Props> {
   ionViewWillEnter() {
