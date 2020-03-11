@@ -12,6 +12,7 @@ const getItemsRequest = () => {
 // リクエスト成功時にdispatchされ，isFetchingをfalseにしてデータをstateにセットする
 export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS'
 const getItemsSuccess = (data: any) => {
+  console.log(data)
   return {
     type: GET_ITEMS_SUCCESS,
     items: data,
@@ -32,16 +33,26 @@ export const getItems = (): Function => {
   console.log('actions/itemActions: getItems !!!!!!!!!!!!!!!!')
   return (dispatch: any) => {
     dispatch(getItemsRequest())
-    const items = db.collection("items").doc("iAHl8KwVQt7SLHiuMgqv")
-    items.get().then((doc) => {
-    if (doc.exists) {
-      console.log("Document data:", doc.data())
-      dispatch(getItemsSuccess(doc.data()))
-    } else {
-      console.log("No such document!")
-    }
-    }).catch((error) => {
-      dispatch(getItemsFailure(error))
-    })
+
+    db.collection("items").get()
+      .then((data) => {
+        console.log("data:", data.docs)
+        dispatch(getItemsSuccess(data.docs))
+      }).catch((err) => {
+        console.log("error!!!!!!")
+        dispatch(getItemsFailure(err))
+      })
+
+    // const items = db.collection("items")
+    // items.get().then((doc) => {
+    // if (doc.exists) {
+    //   console.log("Document data:", doc.data())
+    //   dispatch(getItemsSuccess(doc.data()))
+    // } else {
+    //   console.log("No such document!")
+    // }
+    // }).catch((error) => {
+    //   dispatch(getItemsFailure(error))
+    // })
   }
 }

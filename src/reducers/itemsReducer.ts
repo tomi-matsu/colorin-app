@@ -17,18 +17,22 @@ const items = (state = initialState, action: any) => {
     case GET_ITEMS_REQUEST:
       console.log('reducers/itemsReducer:  GET_ITEMS_REQUEST !!!!!!!!!!!!!!!!')
       // immutable
+      console.log({ ...state, items: [], isFetching: true })
       return { ...state,
         items: [],
         isFetching: true
       }
     case GET_ITEMS_SUCCESS:
       console.log('reducers/itemsReducer:  GET_ITEMS_SUCCESS !!!!!!!!!!!!!!!!')
+      console.log(action.items)
       // immutable
-      return { ...state,
+      const updateState = { ...state,
         isFetching: false,
         items: action.items,
         lastUpdated: action.receivedAt
       }
+      console.log(updateState)
+      return updateState
     case GET_ITEMS_FAILURE:
       console.log('reducers/itemsReducer:  GET_ITEMS_FAILURE !!!!!!!!!!!!!!!!')
       // immutable
