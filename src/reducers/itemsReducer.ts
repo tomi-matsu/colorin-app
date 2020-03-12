@@ -33,8 +33,8 @@ const items = (state = initialState, action: any) => {
       console.log('%c==================reducers/itemsReducer: GET_ITEMS_FAILURE', 'color: red')
       // immutable
       return { ...state,
-        // isFetching: false,
         error: action.error
+        // isFetching: false,
       }
     default:
       return state
