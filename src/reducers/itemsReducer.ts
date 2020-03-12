@@ -29,7 +29,7 @@ const items = (state = initialState, action: any) => {
       const updateState = { ...state,
         isFetching: false,
         items: action.items,
-        lastUpdated: action.receivedAt
+        // lastUpdated: action.receivedAt
       }
       console.log(updateState)
       return updateState
@@ -38,7 +38,7 @@ const items = (state = initialState, action: any) => {
       // immutable
       return { ...state,
         isFetching: false,
-        error: action.error
+        // error: action.error
       }
     default:
       return state

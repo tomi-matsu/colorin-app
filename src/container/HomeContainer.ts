@@ -1,16 +1,20 @@
 import { connect } from "react-redux"
-import { Dispatch, createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
-import rootReducer from '../reducers/rootReducer'
-import { getItems } from "../actions/itemsAction"
+import { Dispatch } from 'redux'
+// import { Dispatch, createStore, applyMiddleware } from 'redux'
+// import store from '../index'
+// import thunk from 'redux-thunk'
+// import rootReducer from '../reducers/rootReducer'
+// import { getItems } from "../actions/itemsAction"
 import Home from "../components/pages/Home"
+import { State } from '../reducers/itemsReducer'
+
 // import { AppState } from "../store"
 
 // ミドルウェアの導入
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunk)
-)
+// const store = createStore(
+//   rootReducer,
+//   applyMiddleware(thunk)
+// )
 
 // Reduxの流れ②: viewからよばれる
 export interface HomeHandler {
@@ -23,16 +27,17 @@ export interface HomeHandler {
 //   }
 // }
 
-const mapStateToProps = (state: any) => {
-  return { items: state.items }
+const mapStateToProps = (state: State) => {
+  console.log('mapStateToProps', state)
+  return { items: state.items, isFetching: state.isFetching }
 }
 
 // Reduxの流れ③: actionがdispatchされる
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     handleGetItems: () => {
-      console.log('components/container/HomeContainer:  !!!!!!!!!!!!!!!!')
-      store.dispatch(getItems())
+      console.log('components/container/HomeContainer:  !!!!!!!!!!!!!!!!', dispatch)
+      // dispatch(AnyActions(getItems()))
     }
   }
 }
