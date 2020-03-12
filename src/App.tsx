@@ -12,7 +12,6 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
-// import Home from './components/pages/Home';
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/Favorite';
 import Account from './components/pages/Account';
@@ -34,21 +33,6 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-
-// /* firebase */
-// import firebase, { db } from './firebase';
-
-// const items = db.collection("items").doc("iAHl8KwVQt7SLHiuMgqv");
-// items.get().then((doc) => {
-//   if (doc.exists) {
-//     console.log("Document data:", doc.data());
-//     this.props.handleItemsGet(doc.data())
-//   } else {
-//     console.log("No such document!");
-//   }
-// }).catch((error) => {
-//   console.log("Error getting document:", error);
-// });
 
 const App: React.FC = () => (
   <IonApp>

@@ -9,19 +9,12 @@ interface CardProps {
 
 export class Card extends React.Component {
   ionViewWillEnter() {
-    console.log('components/parts/Card !!!!!!!!!!!!!!!!')
-    // console.log(this.props)
-    // this.props.handleGetItems();
+    console.log('%c==================components/parts/Card', 'color: blue')
   }
 
   render(){
     return (
       <IonCard>
-        {/* <IonCardHeader>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-          <IonCardTitle>Card Title</IonCardTitle>
-        </IonCardHeader> */}
-
         <IonCardContent className="card">
           <div className="card__left-content">
             <div className="card__color-box first"></div>

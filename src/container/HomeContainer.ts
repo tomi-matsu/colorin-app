@@ -1,24 +1,22 @@
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { ItemsActions } from "../action";
-import Home from "../components/pages/Home";
-import { AppState } from "../store";
+import { connect } from "react-redux"
+import { bindActionCreators, Dispatch } from 'redux';
+import { State } from '../reducers/rootReducer'
+import { getItems } from "../actions/itemsAction"
+import Home from "../components/pages/Home"
 
-// Reduxの流れ②: viewからよばれる
-export interface TopPageHandler {
-    handleGetItems(): void
+export interface HomeHandler {
+  handleGetItems(): Function
 }
 
-const mapStateToProps = (appState: AppState) => {
-    return {
-        items: appState.state.items
-    }
+const mapStateToProps = (state: State) => {
+  console.log('mapStateToProps', state)
+  return { items: state.itemsState.items }
 }
 
-// Reduxの流れ③: actionがdispatchされる
 const mapDispatchToProps = (dispatch: Dispatch) => {
-    return {
-        handleGetItems: () => { dispatch(ItemsActions.getItems()) }
-    }
+  return bindActionCreators({
+    handleGetItems: getItems,
+  }, dispatch);
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

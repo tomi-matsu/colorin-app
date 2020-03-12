@@ -3,7 +3,6 @@ import { IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 import Segment from './Segment';
 
 interface HeaderProps {
-  // name: string;
 }
 
 const Header: React.FC<HeaderProps> = () => {
