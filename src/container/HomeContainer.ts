@@ -1,10 +1,12 @@
 import { connect } from "react-redux"
-import { Dispatch } from 'redux'
+// import { Dispatch } from 'redux'
+import { bindActionCreators, Dispatch } from 'redux';
+
 // import { Dispatch, createStore, applyMiddleware } from 'redux'
 // import store from '../index'
 // import thunk from 'redux-thunk'
 // import rootReducer from '../reducers/rootReducer'
-// import { getItems } from "../actions/itemsAction"
+import { getItems } from "../actions/itemsAction"
 import Home from "../components/pages/Home"
 import { State } from '../reducers/itemsReducer'
 
@@ -34,11 +36,9 @@ const mapStateToProps = (state: State) => {
 
 // Reduxの流れ③: actionがdispatchされる
 const mapDispatchToProps = (dispatch: Dispatch) => {
-  return {
-    handleGetItems: () => {
-      console.log('components/container/HomeContainer:  !!!!!!!!!!!!!!!!', dispatch)
-      // dispatch(AnyActions(getItems()))
-    }
-  }
+  return bindActionCreators({
+    handleGetItems: getItems,
+  }, dispatch);
 }
+  
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

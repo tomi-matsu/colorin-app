@@ -23,7 +23,7 @@ const store = createStore(
   applyMiddleware(thunk)
 )
 
-store.dispatch(getItems())
+// store.dispatch(getItems())
 
 ReactDOM.render(
   <Provider store={store}>
