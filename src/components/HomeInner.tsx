@@ -3,11 +3,10 @@ import Card from './parts/Card';
 
 import './HomeInner.scss';
 
-interface ContainerProps {
-  name: string;
+interface HomeInnerProps {
 }
 
-const HomeInner: React.FC<ContainerProps> = ({ name }) => {
+const HomeInner: React.FC<HomeInnerProps> = () => {
   return (
     <div className="home-container">
       <Card />
@@ -20,8 +19,6 @@ const HomeInner: React.FC<ContainerProps> = ({ name }) => {
       <Card />
       <Card />
       <Card />
-      {/* <strong>{name}</strong> */}
-      {/* <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> */}
     </div>
   );
 };

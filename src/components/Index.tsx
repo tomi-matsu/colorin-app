@@ -12,11 +12,9 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
-import Home from './pages/Home';
+import HomeContainer from '../container/HomeContainer';
 import Favorite from './pages/Favorite';
 import Account from './pages/Account';
-
-import HomeContainer from '../container/HomeContainer';
 
 const App: React.FC = () => (
   <IonApp>

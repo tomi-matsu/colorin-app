@@ -8,7 +8,7 @@ const Favorite: React.FC = () => {
     <IonPage>
       <Header />
       <IonContent>
-        <HomeInner name="Favorite page" />
+        <HomeInner />
       </IonContent>
     </IonPage>
   );

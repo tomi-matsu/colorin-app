@@ -15,11 +15,6 @@ export class Card extends React.Component {
   render(){
     return (
       <IonCard>
-        {/* <IonCardHeader>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-          <IonCardTitle>Card Title</IonCardTitle>
-        </IonCardHeader> */}
-
         <IonCardContent className="card">
           <div className="card__left-content">
             <div className="card__color-box first"></div>

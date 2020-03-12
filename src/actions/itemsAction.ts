@@ -1,7 +1,6 @@
 import { db } from '../firebase'
 
-// Reduxの流れ④: reducerへ
-// リクエスト開始時にdispatch
+// リクエスト開始時
 export const GET_ITEMS_REQUEST = 'GET_ITEMS_REQUEST'
 const getItemsRequest = () => {
   return {
@@ -9,7 +8,7 @@ const getItemsRequest = () => {
   }
 }
 
-// リクエスト成功時にdispatch
+// リクエスト成功時
 export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS'
 const getItemsSuccess = (data: any) => {
   return {
@@ -19,7 +18,7 @@ const getItemsSuccess = (data: any) => {
   }
 }
 
-// リクエスト失敗時にdispatch
+// リクエスト失敗時
 export const GET_ITEMS_FAILURE = 'GET_ITEMS_FAILURE'
 const getItemsFailure = (error: any) => {
   return {
@@ -39,7 +38,7 @@ export const getItems = (): Function => {
           items.push(doc.data())
         });
         console.log('%c==================actions/itemActions: getItems success', 'color: red')
-        console.log("data:", items, 'color: blue')
+        console.log("data:", items)
         dispatch(getItemsSuccess(items))
       }).catch((err) => {
         console.log('%c==================actions/itemActions: getItems error', 'color: red')

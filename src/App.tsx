@@ -12,7 +12,6 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
-// import Home from './components/pages/Home';
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/Favorite';
 import Account from './components/pages/Account';

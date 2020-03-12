@@ -8,7 +8,7 @@ const Account: React.FC = () => {
     <IonPage>
       <Header />
       <IonContent>
-        <HomeInner name="Account 1 page" />
+        <HomeInner />
       </IonContent>
     </IonPage>
   );
