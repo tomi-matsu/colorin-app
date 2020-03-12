@@ -10,7 +10,7 @@ const initialState: ItemsState = {
   items: []
 }
 
-const items = (state = initialState, action: any) => {
+const itemsReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case GET_ITEMS_REQUEST:
       console.log('%c==================reducers/itemsReducer: GET_ITEMS_REQUEST', 'color: red')
@@ -39,4 +39,4 @@ const items = (state = initialState, action: any) => {
   }
 }
 
-export default items
+export default itemsReducer
