@@ -9,7 +9,7 @@ interface CardProps {
 
 export class Card extends React.Component {
   ionViewWillEnter() {
-    console.log('components/parts/Card !!!!!!!!!!!!!!!!')
+    console.log('%c==================components/parts/Card', 'color: blue')
   }
 
   render(){

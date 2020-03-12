@@ -3,39 +3,37 @@ import {
 } from '../actions/itemsAction'
 
 export interface State {
-  isFetching: boolean,
+  // isFetching: boolean,
   items: []
 }
 
 const initialState: State = {
-  isFetching: false,
+  // isFetching: false,
   items: []
 }
 
 const items = (state = initialState, action: any) => {
   switch (action.type) {
     case GET_ITEMS_REQUEST:
-      console.log('reducers/itemsReducer:  GET_ITEMS_REQUEST !!!!!!!!!!!!!!!!')
+      console.log('%c==================reducers/itemsReducer: GET_ITEMS_REQUEST', 'color: red')
       // immutable
       return { ...state,
         items: [],
-        isFetching: true
+        // isFetching: true
       }
     case GET_ITEMS_SUCCESS:
-      console.log('reducers/itemsReducer:  GET_ITEMS_SUCCESS !!!!!!!!!!!!!!!!')
-      // immutable
-      const updateState = { ...state,
-        isFetching: false,
-        items: action.items,
-        lastUpdated: action.receivedAt
-      }
-      console.log(updateState)
-      return updateState
-    case GET_ITEMS_FAILURE:
-      console.log('reducers/itemsReducer:  GET_ITEMS_FAILURE !!!!!!!!!!!!!!!!')
+      console.log('%c==================reducers/itemsReducer: GET_ITEMS_SUCCESS', 'color: red')
       // immutable
       return { ...state,
-        isFetching: false,
+        // isFetching: false,
+        items: action.items,
+        // lastUpdated: action.receivedAt
+      }
+    case GET_ITEMS_FAILURE:
+      console.log('%c==================reducers/itemsReducer: GET_ITEMS_FAILURE', 'color: red')
+      // immutable
+      return { ...state,
+        // isFetching: false,
         error: action.error
       }
     default:

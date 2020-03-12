@@ -31,7 +31,7 @@ const mapStateToProps = (state: any) => {
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     handleGetItems: () => {
-      console.log('components/container/HomeContainer:  !!!!!!!!!!!!!!!!')
+      console.log('%c==================components/container/HomeContainer', 'color: blue')
       store.dispatch(getItems())
     }
   }

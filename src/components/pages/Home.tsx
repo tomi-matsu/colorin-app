@@ -15,7 +15,7 @@ type Props =  OwnProps & HomeHandler
 
 export class Home extends React.Component<Props> {
   ionViewWillEnter() {
-    console.log('components/pages/Home !!!!!!!!!!!!!!!!')
+    console.log('%c==================components/pages/Home', 'color: blue')
     this.props.handleGetItems()
   }
 
