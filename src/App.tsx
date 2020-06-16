@@ -12,6 +12,9 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
+// import LoginPage from './components/LoginPage';
+import LoginContainer from './container/LoginContainer';
+
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/Favorite';
 import Account from './components/pages/Account';
@@ -37,7 +40,8 @@ import './theme/variables.css';
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
+      <LoginContainer></LoginContainer>
+      {/* <IonTabs>
         <IonRouterOutlet>
           <Route path="/home" component={HomeContainer} exact={true} />
           <Route path="/favorite" component={Favorite} exact={true} />
@@ -58,7 +62,7 @@ const App: React.FC = () => (
             <IonLabel>アカウント</IonLabel>
           </IonTabButton>
         </IonTabBar>
-      </IonTabs>
+      </IonTabs> */}
     </IonReactRouter>
   </IonApp>
 );
