@@ -1,31 +1,47 @@
 import firebase from '../firebase'
+import '@codetrix-studio/capacitor-google-auth';
+import { Plugins } from '@capacitor/core';
 
-export const changeEmail = (email: string) => {
+// リクエスト開始時
+export const AUTH_REQUEST = 'AUTH_REQUEST'
+const authRequest = () => {
   return {
-    type: 'change_email',
-    payload: email
-  };
-};
+    type: AUTH_REQUEST
+  }
+}
 
-export const changePassword = (password: string) => {
+// リクエスト成功時
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+const authSuccess = (data: any) => {
   return {
-    type: 'change_password',
-    payload: password
-  };
-};
+    type: AUTH_SUCCESS,
+    googleUser: data,
+    receivedAt: Date.now()
+  }
+}
 
-export const submitLogin = ({ email, password }: {email: string, password: string} ) => {
+// リクエスト失敗時
+export const AUTH_FAILURE = 'AUTH_FAILURE'
+const authFailure = (error: { code: any; }) => {
+  return {
+    type: AUTH_FAILURE,
+    error
+  }
+}
+
+export const googleLogin = (): Function => {
+  console.log('%c==================actions/authActions: googleLogin', 'color: red')
   return (dispatch: any) => {
-    dispatch({ type: 'login_start' });
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(() => {
-        dispatch({ type: 'login_success' });
-        dispatch({ type: 'login_end' });
+    dispatch(authRequest())
+    const googleUser: any = {}
+    Plugins.GoogleAuth.signIn()
+      .then(async (googleUser: { authentication: { idToken: any; }; name: any; }) => {
+        googleUser = googleUser
+        console.log('%c==================actions/authActions: auth success', 'color: red')
+        dispatch(authSuccess(googleUser))
+      }).catch((error: { code: any; }) => {
+        console.log('%c==================actions/authActions: auth error', 'color: red')
+        dispatch(authFailure(error))
       })
-      .catch(() => {
-        dispatch({ type: 'login_fail' });
-        dispatch({ type: 'login_end' });
-      });
   }
 }

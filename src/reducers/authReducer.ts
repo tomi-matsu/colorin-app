@@ -1,34 +1,44 @@
+import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } from '../actions/authAction'
+
 export interface authState {
-  email: string,
-  password: string,
-  loading: boolean,
-  loggedIn: string
+  credential: any,
+  googleUser: any,
+  lastLogin: Date | null
 }
 
 const initialState: authState = {
-  email: '',
-  password: '',
-  loading: false,
-  loggedIn: ""
+  credential: null,
+  googleUser: null,
+  lastLogin: null
 }
 
 const authReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case 'change_email':
-      return { ...state, email: action.payload }
-    case 'change_password':
-      return { ...state, password: action.payload }
-    case 'login_start':
-      return { ...state, loading: true }
-    case 'login_end':
-      return { ...state, loading: false }
-    case 'login_success':
-      return { ...state, loggedIn: "ログイン中" }
-    case 'login_fail':
-      return { ...state, loggedIn: ""}
+    case AUTH_REQUEST:
+      console.log('%c==================reducers/authReducer:AUTH_REQUEST', 'color: red')
+      // immutable
+      return { ...state,
+        googleUser: null,
+        isFetching: true
+      }
+    case AUTH_SUCCESS:
+      console.log('%c==================reducers/authReducer: AUTH_SUCCESS', 'color: red')
+      // immutable
+      return { ...state,
+        isFetching: false,
+        googleUser: action.googleUser,
+        lastLogin: action.receivedAt
+      }
+    case AUTH_FAILURE:
+      console.log('%c==================reducers/authReducer: AUTH_FAILURE', 'color: red')
+      // immutable
+      return { ...state,
+        error: action.error,
+        isFetching: false,
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
 export default authReducer
