@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@capacitor/android": "^1.5.0",
-    "@capacitor/core": "1.5.0",
+    "@capacitor/android": "^2.2.0",
+    "@capacitor/core": "^2.2.0",
     "@codetrix-studio/capacitor-google-auth": "^2.1.1",
     "@ionic/react": "^5.0.0",
     "@ionic/react-router": "^5.0.0",
@@ -53,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "1.5.0",
+    "@capacitor/cli": "^2.2.0",
     "@types/react-redux": "^7.1.7",
     "@types/redux-thunk": "^2.1.0",
     "node-sass": "^4.14.1",

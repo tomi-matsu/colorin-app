@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "com.piitre.colorin",
   "appName": "colorin-app",
   "bundledWebRuntime": false,
   "npmClient": "npm",
