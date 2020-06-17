@@ -1,9 +1,9 @@
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import Header from '../parts/Header';
-import HomeInner from '../HomeInner';
+import HomeInner from '../inners/HomeInner';
 
-const Favorite: React.FC = () => {
+const Account: React.FC = () => {
   return (
     <IonPage>
       <Header />
@@ -14,4 +14,4 @@ const Favorite: React.FC = () => {
   );
 };
 
-export default Favorite;
+export default Account;

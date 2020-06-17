@@ -1,5 +1,6 @@
 import React from 'react';
-import { LoginHandler } from '../container/LoginContainer';
+import { Redirect, Route } from 'react-router-dom';
+import { LoginHandler } from '../../container/LoginContainer';
 import {
   IonPage,
   IonHeader,
@@ -10,7 +11,9 @@ import {
   withIonLifeCycle
 } from '@ionic/react';
 
-interface LoginProps {}
+interface LoginProps {
+  googleUser: any
+}
 interface LoginState {}
 
 type Props =  LoginProps & LoginHandler
@@ -22,7 +25,11 @@ export class Login extends React.Component<Props> {
   }
 
   render() {
+    if (this.props.googleUser) {
+      return <Redirect to="/home" />;
+    }
     return (
+
       <IonPage>
         <IonHeader translucent>
           <IonToolbar>

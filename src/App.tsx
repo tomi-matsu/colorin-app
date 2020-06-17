@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -12,12 +12,10 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
-// import LoginPage from './components/LoginPage';
-import LoginContainer from './container/LoginContainer';
-
+import LoginContainer, { LoginHandler } from './container/LoginContainer';
 import HomeContainer from './container/HomeContainer';
-import Favorite from './components/pages/Favorite';
-import Account from './components/pages/Account';
+import Favorite from './components/pages/FavoritePage';
+import Account from './components/pages/AccountPage';
 
 import './App.scss';
 /* Core CSS required for Ionic components to work properly */
@@ -37,34 +35,59 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <LoginContainer></LoginContainer>
-      {/* <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/home" component={HomeContainer} exact={true} />
-          <Route path="/favorite" component={Favorite} exact={true} />
-          <Route path="/account" component={Account} />
-          <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="home" href="/home">
-            <IonIcon icon={home} />
-            <IonLabel>ホーム</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="favorite" href="/favorite">
-            <IonIcon icon={heart} />
-            <IonLabel>お気に入り</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="account" href="/account">
-            <IonIcon icon={person} />
-            <IonLabel>アカウント</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs> */}
-    </IonReactRouter>
-  </IonApp>
-);
+interface LoginProps {
+  googleUser: any
+}
+
+type Props =  LoginProps & LoginHandler
+
+class App extends React.Component<Props> {
+
+  render() {
+    return (
+      <IonApp>
+        <IonReactRouter>
+          <IonRouterOutlet>
+              <Route path="/home" component={HomeContainer} exact={true} />
+              <Route path="/favorite" component={Favorite} exact={true} />
+              <Route path="/account" component={Account} />
+              <Route
+                exact
+                path="/home"
+                render={() => {
+                  return this.props.googleUser ? <HomeContainer /> : <LoginContainer />;
+                }}
+              />
+          </IonRouterOutlet>
+          {/* <LoginContainer></LoginContainer> */}
+          <IonTabs>
+            <IonRouterOutlet>
+              <Route path="/home" component={HomeContainer} exact={true} />
+              <Route path="/favorite" component={Favorite} exact={true} />
+              <Route path="/account" component={Account} />
+              <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
+            </IonRouterOutlet>
+            <IonTabBar slot="bottom">
+              <IonTabButton tab="home" href="/home">
+                <IonIcon icon={home} />
+                <IonLabel>ホーム</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="favorite" href="/favorite">
+                <IonIcon icon={heart} />
+                <IonLabel>お気に入り</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="account" href="/account">
+                <IonIcon icon={person} />
+                <IonLabel>アカウント</IonLabel>
+              </IonTabButton>
+            </IonTabBar>
+          </IonTabs>
+        </IonReactRouter>
+      </IonApp>
+    )
+
+  }
+
+}
 
 export default App;

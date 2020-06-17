@@ -2,14 +2,17 @@ import { connect } from "react-redux"
 import { bindActionCreators, Dispatch } from 'redux';
 import { State } from '../reducers/rootReducer'
 import { googleLogin } from "../actions/authAction"
-import Login from "../components/LoginPage"
+import Login from "../components/pages/LoginPage"
 
 export interface LoginHandler {
-  googleLogin(): Function
+  googleLogin(): Function,
+  googleUser: any
 }
 
 const mapStateToProps = (state: State) => {
-  return {}
+  return {
+    googleUser: state.authState.googleUser
+  }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => {

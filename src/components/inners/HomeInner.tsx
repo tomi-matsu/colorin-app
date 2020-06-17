@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './parts/Card';
+import Card from '../parts/Card';
 
 import './HomeInner.scss';
 

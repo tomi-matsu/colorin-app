@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import { bindActionCreators, Dispatch } from 'redux';
 import { State } from '../reducers/rootReducer'
 import { getItems } from "../actions/itemsAction"
-import Home from "../components/pages/Home"
+import Home from "../components/pages/HomePage"
 
 export interface HomeHandler {
   handleGetItems(): Function
