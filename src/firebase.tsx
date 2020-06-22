@@ -11,6 +11,7 @@ const firebaseConfig: object = {
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
 };
 firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
 
 // firebase.firestore().settings(settings);
 

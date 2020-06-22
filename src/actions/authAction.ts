@@ -38,6 +38,15 @@ export const googleLogin = (): Function => {
       .then(async (googleUser: { authentication: { idToken: any; }; name: any; }) => {
         googleUser = googleUser
         console.log('%c==================actions/authActions: auth success', 'color: red')
+        console.log(googleUser)
+        // firebase.auth().onAuthStateChanged(function(user) {
+        //   if (user) {
+        //     console.log(user)
+        //     // User is signed in.
+        //   } else {
+        //     // No user is signed in.
+        //   }
+        // });
         dispatch(authSuccess(googleUser))
       }).catch((error: { code: any; }) => {
         console.log('%c==================actions/authActions: auth error', 'color: red')

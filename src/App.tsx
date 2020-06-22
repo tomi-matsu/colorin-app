@@ -12,6 +12,9 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { home, heart, person } from 'ionicons/icons';
 
+import firebase from './firebase'
+
+import AppContainer, { AppHandler } from './container/AppContainer';
 import LoginContainer, { LoginHandler } from './container/LoginContainer';
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/FavoritePage';
@@ -35,29 +38,27 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-interface LoginProps {
-  googleUser: any
+interface AppProps {
+  isLogin: boolean
 }
 
-type Props =  LoginProps & LoginHandler
+type Props =  AppProps & AppHandler
 
 class App extends React.Component<Props> {
+  // constructor(props: Readonly<Props>) {
+  //   super(props)
+  //   let user = firebase.auth().currentUser
+  //   console.log(user)
+  // }
 
   render() {
-    return (
+    return this.props.isLogin ? (
       <IonApp>
         <IonReactRouter>
           <IonRouterOutlet>
               <Route path="/home" component={HomeContainer} exact={true} />
               <Route path="/favorite" component={Favorite} exact={true} />
               <Route path="/account" component={Account} />
-              <Route
-                exact
-                path="/home"
-                render={() => {
-                  return this.props.googleUser ? <HomeContainer /> : <LoginContainer />;
-                }}
-              />
           </IonRouterOutlet>
           {/* <LoginContainer></LoginContainer> */}
           <IonTabs>
@@ -84,10 +85,10 @@ class App extends React.Component<Props> {
           </IonTabs>
         </IonReactRouter>
       </IonApp>
+    ) : (
+      <LoginContainer />
     )
-
   }
-
 }
 
 export default App;
