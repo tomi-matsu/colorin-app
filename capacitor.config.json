@@ -5,12 +5,13 @@
   "npmClient": "npm",
   "webDir": "build",
   "plugins": {
-    "GoogleAuth": {
-      "scopes": [
-        "profile",
-        "email"
-      ],
-      "serverClientId": "Your Web Client ID"
+    "CapacitorFirebaseAuth": {
+      "providers": ["google.com"],
+      "languageCode": "ja",
+      "nativeAuth": false,
+      "permissions": {
+        "google": ["profile", "https://www.googleapis.com/auth/drive"]
+      }
     }
   },
   "cordova": {}
