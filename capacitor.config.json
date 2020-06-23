@@ -10,7 +10,7 @@
       "languageCode": "ja",
       "nativeAuth": false,
       "permissions": {
-        "google": ["profile", "https://www.googleapis.com/auth/drive"]
+        "google": ["profile"]
       }
     }
   },
