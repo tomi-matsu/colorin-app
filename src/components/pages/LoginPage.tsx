@@ -10,9 +10,16 @@ import {
   IonButton,
   withIonLifeCycle
 } from '@ionic/react';
+import HomeContainer from '../../container/HomeContainer';
 
 interface LoginProps {
-  googleUser: any
+  googleUser: {
+    displayName: String | null,
+    email: String | null,
+    photoURL: String | null,
+    refreshToken: String | null,
+    uid: String | null
+  }
 }
 interface LoginState {}
 
@@ -25,32 +32,32 @@ export class Login extends React.Component<Props> {
   }
 
   render() {
-    if (this.props.googleUser) {
-      return <Redirect to="/home" />;
+    // if (this.props.googleUser) {
+    //   return <HomeContainer />;
+    // } else {
+      return (
+        <IonPage>
+          <IonHeader translucent>
+            <IonToolbar>
+              <IonTitle>LOGIN</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+
+          <IonContent>
+            <IonButton
+              expand="full"
+              style={{ margin: 14 }}
+              onClick={e => {
+                this.googleLogin()
+              }}
+            >
+              Googleでログイン
+            </IonButton>
+          </IonContent>
+        </IonPage>
+      )
     }
-    return (
-
-      <IonPage>
-        <IonHeader translucent>
-          <IonToolbar>
-            <IonTitle>LOGIN</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
-        <IonContent>
-          <IonButton
-            expand="full"
-            style={{ margin: 14 }}
-            onClick={e => {
-              this.googleLogin()
-            }}
-          >
-            Googleでログイン
-          </IonButton>
-        </IonContent>
-      </IonPage>
-    )
-  }
+  // }
 }
 
 export default withIonLifeCycle(Login);

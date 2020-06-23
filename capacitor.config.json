@@ -6,13 +6,21 @@
   "webDir": "build",
   "plugins": {
     "CapacitorFirebaseAuth": {
-      "providers": ["google.com"],
+      "providers": [
+        "google.com"
+      ],
       "languageCode": "ja",
       "nativeAuth": false,
       "permissions": {
-        "google": ["profile"]
+        "google": [
+          "profile"
+        ]
       }
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "server": {
+    "url": "http://192.168.86.225:8100",
+    "cleartext": true
+  }
 }

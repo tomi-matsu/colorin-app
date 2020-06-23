@@ -6,12 +6,20 @@ import App from "../App"
 
 export interface AppHandler {
   // googleLogin(): Function,
-  isLogin: boolean
+  isLogin: boolean,
+  googleUser: {
+    displayName: String | null,
+    email: String | null,
+    photoURL: String | null,
+    refreshToken: String | null,
+    uid: String | null
+  }
 }
 
 const mapStateToProps = (state: State) => {
   return {
-    isLogin: state.authState.isLogin
+    isLogin: state.authState.isLogin,
+    googleUser: state.authState.googleUser
   }
 }
 

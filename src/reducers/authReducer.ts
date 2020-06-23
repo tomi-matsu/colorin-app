@@ -2,14 +2,26 @@ import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } from '../actions/authAction'
 import firebase from '../firebase'
 
 export interface authState {
-  googleUser: any,
+  googleUser: {
+    displayName: String | null,
+    email: String | null,
+    photoURL: String | null,
+    refreshToken: String | null,
+    uid: String | null
+  },
   isFetching: boolean,
   lastLogin: Date | null,
   isLogin: boolean
 }
 
 const initialState: authState = {
-  googleUser: null,
+  googleUser: {
+    displayName: null,
+    email: null,
+    photoURL: null,
+    refreshToken: null,
+    uid: null
+  },
   isFetching: false,
   lastLogin: null,
   isLogin: false
@@ -30,9 +42,6 @@ const authReducer = (state = initialState, action: any) => {
     case AUTH_SUCCESS:
       console.log('%c==================reducers/authReducer: AUTH_SUCCESS', 'color: red')
       // immutable
-      let user = firebase.auth().currentUser;
-      console.log('==================================')
-      console.log(user)
       return { ...state,
         isFetching: false,
         googleUser: action.googleUser,

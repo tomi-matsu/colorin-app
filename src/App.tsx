@@ -39,17 +39,30 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 interface AppProps {
-  isLogin: boolean
+  isLogin: boolean,
+  googleUser: {
+    displayName: String | null,
+    email: String | null,
+    photoURL: String | null,
+    refreshToken: String | null,
+    uid: String | null
+  }
 }
 
 type Props =  AppProps & AppHandler
 
 class App extends React.Component<Props> {
-  // constructor(props: Readonly<Props>) {
-  //   super(props)
-  //   let user = firebase.auth().currentUser
-  //   console.log(user)
-  // }
+  constructor(props: Readonly<Props>) {
+    super(props)
+    // let user = firebase.auth().currentUser
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+      } else {
+        // No user is signed in.
+      }
+    });
+  }
 
   render() {
     return this.props.isLogin ? (

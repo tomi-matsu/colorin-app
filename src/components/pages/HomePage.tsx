@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonContent, IonPage, withIonLifeCycle } from '@ionic/react';
+import {cfaSignOut} from 'capacitor-firebase-auth';
+import { IonContent, IonPage, withIonLifeCycle, IonButton } from '@ionic/react';
 import Header from '../parts/Header';
 // import HomeInner from '../HomeInner';
 import Fab from '../parts/Fab';
@@ -19,6 +20,10 @@ export class Home extends React.Component<Props> {
     this.props.handleGetItems()
   }
 
+  signOut() {
+    cfaSignOut().subscribe()
+  }
+
   render(){
       return (
         <IonPage>
@@ -29,6 +34,15 @@ export class Home extends React.Component<Props> {
             {this.props.items.map((item, index) => {
               return <li key={index}>{item['userId']}</li>
             })}
+            <IonButton
+              expand="full"
+              style={{ margin: 14 }}
+              onClick={e => {
+                this.signOut()
+              }}
+            >
+              byebye
+            </IonButton>
           </IonContent>
           <Fab />
         </IonPage>

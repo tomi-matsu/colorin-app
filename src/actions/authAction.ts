@@ -35,29 +35,24 @@ export const googleLogin = (): Function => {
   console.log('%c==================actions/authActions: googleLogin', 'color: red')
   return (dispatch: any) => {
     dispatch(authRequest())
-    // const googleUser: any = {}
+    let googleUser: {
+      displayName: String | null,
+      email: String | null,
+      photoURL: String | null,
+      refreshToken: String | null,
+      uid: String | null
+    }
     cfaSignIn('google.com').subscribe(
-      (user: User) => console.log(user.displayName)
+      (user: User) => {
+        googleUser = {
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          refreshToken: user.refreshToken,
+          uid: user.uid
+        }
+        dispatch(authSuccess(googleUser))
+      }
     )
-    // Plugins.GoogleAuth.signIn()
-    //   .then(async (googleUser: { authentication: { idToken: any; }; name: any; }) => {
-    //     googleUser = googleUser
-    //     console.log('%c==================actions/authActions: auth success', 'color: red')
-    //     console.log(googleUser)
-    //     const credential = Plugins.GoogleAuthProvider.credential(googleUser.authentication.idToken);
-    //     console.log(credential)
-    //     // firebase.auth().onAuthStateChanged(function(user) {
-    //     //   if (user) {
-    //     //     console.log(user)
-    //     //     // User is signed in.
-    //     //   } else {
-    //     //     // No user is signed in.
-    //     //   }
-    //     // });
-    //     dispatch(authSuccess(googleUser))
-    //   }).catch((error: { code: any; }) => {
-    //     console.log('%c==================actions/authActions: auth error', 'color: red')
-    //     dispatch(authFailure(error))
-    //   })
   }
 }
