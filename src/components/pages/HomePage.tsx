@@ -2,7 +2,7 @@ import React from 'react';
 import {cfaSignOut} from 'capacitor-firebase-auth';
 import { IonContent, IonPage, withIonLifeCycle, IonButton } from '@ionic/react';
 import Header from '../parts/Header';
-// import HomeInner from '../HomeInner';
+import HomeInner from '../inners/HomeInner';
 import Fab from '../parts/Fab';
 import { HomeHandler } from '../../container/HomeContainer';
 
@@ -25,15 +25,12 @@ export class Home extends React.Component<Props> {
   }
 
   render(){
+    if (this.props.items.length !== 0) {
       return (
         <IonPage>
           <Header />
-          <IonContent>
-            {/* <HomeInner name="HOME page" /> */}
-            <p>{this.props.isFetching}</p>
-            {this.props.items.map((item, index) => {
-              return <li key={index}>{item['userId']}</li>
-            })}
+            <IonContent>
+              <HomeInner items={this.props.items} />
             <IonButton
               expand="full"
               style={{ margin: 14 }}
@@ -47,6 +44,15 @@ export class Home extends React.Component<Props> {
           <Fab />
         </IonPage>
       )
+    } else {
+      return (
+        <IonPage>
+          <Header />
+          <Fab />
+        </IonPage>
+      )
+    }
+
   }
 }
 

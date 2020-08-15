@@ -65,6 +65,7 @@ class App extends React.Component<Props> {
   }
 
   render() {
+    // return (
     return this.props.isLogin ? (
       <IonApp>
         <IonReactRouter>

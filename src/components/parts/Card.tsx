@@ -5,11 +5,16 @@ import { heartOutline } from 'ionicons/icons';
 import './Card.scss';
 
 interface CardProps {
+  item: {}
 }
 
-export class Card extends React.Component {
+type Props =  CardProps
+
+export class Card extends React.Component<Props> {
   ionViewWillEnter() {
     console.log('%c==================components/parts/Card', 'color: blue')
+    console.log('@@@@@@@^^@@@@@@@@@@@@@@@@@@@')
+    console.log(this.props.item)
   }
 
   render(){
