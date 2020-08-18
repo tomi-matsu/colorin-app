@@ -25,7 +25,7 @@ export class Home extends React.Component<Props> {
   }
 
   render(){
-    if (this.props.items.length !== 0) {
+    if (this.props.items) {
       return (
         <IonPage>
           <Header />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
 import { LoginHandler } from '../../container/LoginContainer';
 import {
   IonPage,
@@ -10,7 +9,6 @@ import {
   IonButton,
   withIonLifeCycle
 } from '@ionic/react';
-import HomeContainer from '../../container/HomeContainer';
 
 interface LoginProps {
   googleUser: {

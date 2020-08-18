@@ -31,11 +31,11 @@ export const getItems = (): Function => {
   console.log('%c==================actions/itemActions: getItems request', 'color: red')
   return (dispatch: any) => {
     dispatch(getItemsRequest())
-    const items: any= []
+    const items: any = []
     db.collection("items").get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc: any): void => {
-          items.push(doc.data())
+      .then((data) => {
+        data.forEach((doc: any): void => {
+          items.push({ ...doc.data(), id: doc.id})
         });
         console.log('%c==================actions/itemActions: getItems success', 'color: red')
         console.log("data:", items)

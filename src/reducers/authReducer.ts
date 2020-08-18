@@ -1,5 +1,4 @@
 import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } from '../actions/authAction'
-import firebase from '../firebase'
 
 export interface authState {
   googleUser: {

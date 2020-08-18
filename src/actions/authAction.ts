@@ -1,6 +1,3 @@
-import firebase from '../firebase'
-// import '@codetrix-studio/capacitor-google-auth';
-// import { Plugins } from '@capacitor/core';
 import { User } from 'firebase/app'
 import { cfaSignIn } from 'capacitor-firebase-auth';
 

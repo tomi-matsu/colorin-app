@@ -5,36 +5,53 @@ import { heartOutline } from 'ionicons/icons';
 import './Card.scss';
 
 interface CardProps {
-  item: {}
+  item: {
+    id: null,
+    colors: { first: string, second: string, third: string },
+    text: string,
+    image: string,
+    tags: string[],
+    createdAt: { seconds: number, nanosecinds: number }
+  }
 }
 
-type Props =  CardProps
+// type Props =  CardProps
 
-export class Card extends React.Component<Props> {
+export class Card extends React.Component<CardProps> {
   ionViewWillEnter() {
     console.log('%c==================components/parts/Card', 'color: blue')
-    console.log('@@@@@@@^^@@@@@@@@@@@@@@@@@@@')
     console.log(this.props.item)
   }
 
   render(){
+    let firstColor = {
+      backgroundColor: this.props.item.colors.first
+    };
+    let secondColor = {
+      backgroundColor: this.props.item.colors.second
+    };
+    let thirdColor = {
+      backgroundColor: this.props.item.colors.third
+    };
+    let dateTime = new Date(this.props.item.createdAt.seconds * 1000);
+
     return (
       <IonCard>
         <IonCardContent className="card">
           <div className="card__left-content">
-            <div className="card__color-box first"></div>
-            <div className="card__color-box second"></div>
-            <div className="card__color-box third"></div>
+            <div className="card__color-box" style={firstColor}></div>
+            <div className="card__color-box" style={secondColor}></div>
+            <div className="card__color-box" style={thirdColor}></div>
           </div>
           <div className="card__right-content">
             <div className="card__right-content-upper">
-              <span className="card__date">2020/02/29</span>
+              <span className="card__date">{dateTime.toLocaleDateString()}</span>
               <IonIcon icon={ heartOutline } className='icon' color="primary" />
             </div>
             <div className="card__right-content-lower">
-              <span className="card__tag">青</span>
-              <span className="card__tag">赤</span>
-              <span className="card__tag">黄</span>
+              <span className="card__tag">{this.props.item.tags[0]}</span>
+              <span className="card__tag">{this.props.item.tags[1]}</span>
+              <span className="card__tag">{this.props.item.tags[2]}</span>
             </div>
           </div>
         </IonCardContent>

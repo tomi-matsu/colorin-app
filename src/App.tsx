@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
@@ -14,8 +14,8 @@ import { home, heart, person } from 'ionicons/icons';
 
 import firebase from './firebase'
 
-import AppContainer, { AppHandler } from './container/AppContainer';
-import LoginContainer, { LoginHandler } from './container/LoginContainer';
+import { AppHandler } from './container/AppContainer';
+import LoginContainer from './container/LoginContainer';
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/FavoritePage';
 import Account from './components/pages/AccountPage';

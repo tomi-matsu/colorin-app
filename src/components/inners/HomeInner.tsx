@@ -7,15 +7,18 @@ interface HomeInnerProps {
   items: any[]
 }
 
-type Props =  HomeInnerProps
+// type Props =  HomeInnerProps
 
-export class HomeInner extends React.Component<Props> {
+export class HomeInner extends React.Component<HomeInnerProps> {
+  public static defaultProps: HomeInnerProps = {
+    items: []
+  };
 
   render(){
     return (
       <div className="home-container">
         {this.props.items.map((item) => {
-          return <Card item={item}/>
+          return <Card item={item} key={item.id}/>
         })}
         {/* <Card />
         <Card />
