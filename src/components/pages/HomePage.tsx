@@ -5,6 +5,7 @@ import Header from '../parts/Header';
 import HomeInner from '../inners/HomeInner';
 import Fab from '../parts/Fab';
 import { HomeHandler } from '../../container/HomeContainer';
+import Segment from '../parts/Segment';
 
 interface HomeProps {
   isFetching: boolean
@@ -29,8 +30,9 @@ export class Home extends React.Component<Props> {
       return (
         <IonPage>
           <Header />
-            <IonContent>
-              <HomeInner items={this.props.items} />
+          <Segment />
+          <IonContent>
+            <HomeInner items={this.props.items} />
             <IonButton
               expand="full"
               style={{ margin: 14 }}

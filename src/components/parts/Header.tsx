@@ -1,6 +1,5 @@
 import React from 'react';
 import { IonHeader, IonTitle, IonToolbar } from '@ionic/react';
-import Segment from './Segment';
 
 interface HeaderProps {
 }
@@ -11,7 +10,6 @@ const Header: React.FC<HeaderProps> = () => {
       <IonToolbar>
         <IonTitle>ホーム</IonTitle>
       </IonToolbar>
-      <Segment />
     </IonHeader>
   );
 };
