@@ -1,5 +1,5 @@
 import React from 'react';
-import {cfaSignOut} from 'capacitor-firebase-auth';
+import { cfaSignOut } from 'capacitor-firebase-auth';
 import { IonContent, IonPage, withIonLifeCycle, IonButton } from '@ionic/react';
 import Header from '../parts/Header';
 import HomeInner from '../inners/HomeInner';
@@ -29,7 +29,7 @@ export class Home extends React.Component<Props> {
     if (this.props.items) {
       return (
         <IonPage>
-          <Header />
+          <Header title={'ホーム'} />
           <Segment />
           <IonContent>
             <HomeInner items={this.props.items} />

@@ -1,0 +1,30 @@
+.account-container {
+  font-size: 1.6rem;
+
+  &__account-image {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  &__account-image-pic {
+    width: 110px;
+  }
+
+  &__account-name {
+    margin-bottom: 0;
+    line-height: 2;
+    text-align: center;
+  }
+
+  &__info {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  &__btn {
+    // --color: #fff;
+    bottom: 32px;
+    position: fixed;
+    width: calc(100vw - 28px);
+  }
+}

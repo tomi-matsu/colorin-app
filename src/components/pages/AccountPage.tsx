@@ -1,14 +1,14 @@
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import Header from '../parts/Header';
-import HomeInner from '../inners/HomeInner';
+import AccountInner from '../inners/AccountInner';
 
 const Account: React.FC = () => {
   return (
     <IonPage>
-      <Header />
+      <Header　title={'アカウント'} />
       <IonContent>
-        <HomeInner />
+        <AccountInner />
       </IonContent>
     </IonPage>
   );
