@@ -1,12 +1,9 @@
 import { connect } from "react-redux"
 import { bindActionCreators, Dispatch } from 'redux';
 import { State } from '../reducers/rootReducer'
-// import { googleLogin } from "../actions/authAction"
-import App from "../App"
+import Account from "../components/pages/AccountPage"
 
-export interface AppHandler {
-  // googleLogin(): Function,
-  isLogin: boolean,
+export interface AccountHandler {
   googleUser: {
     displayName: string,
     email: string,
@@ -18,15 +15,14 @@ export interface AppHandler {
 
 const mapStateToProps = (state: State) => {
   return {
-    isLogin: state.authState.isLogin,
     googleUser: state.authState.googleUser
   }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return bindActionCreators({
-    // googleLogin: googleLogin
+    // handleGetItems: getItems,
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Account)

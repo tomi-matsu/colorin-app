@@ -18,7 +18,7 @@ import { AppHandler } from './container/AppContainer';
 import LoginContainer from './container/LoginContainer';
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/FavoritePage';
-import Account from './components/pages/AccountPage';
+import AccountContainer from './container/AccountContainer';
 
 import './App.scss';
 /* Core CSS required for Ionic components to work properly */
@@ -41,11 +41,11 @@ import './theme/variables.css';
 interface AppProps {
   isLogin: boolean,
   googleUser: {
-    displayName: String | null,
-    email: String | null,
-    photoURL: String | null,
-    refreshToken: String | null,
-    uid: String | null
+    displayName: string,
+    email: string,
+    photoURL: string,
+    refreshToken: string,
+    uid: string
   }
 }
 
@@ -72,14 +72,14 @@ class App extends React.Component<Props> {
           <IonRouterOutlet>
               <Route path="/home" component={HomeContainer} exact={true} />
               <Route path="/favorite" component={Favorite} exact={true} />
-              <Route path="/account" component={Account} />
+              <Route path="/account" component={AccountContainer} />
           </IonRouterOutlet>
           {/* <LoginContainer></LoginContainer> */}
           <IonTabs>
             <IonRouterOutlet>
               <Route path="/home" component={HomeContainer} exact={true} />
               <Route path="/favorite" component={Favorite} exact={true} />
-              <Route path="/account" component={Account} />
+              <Route path="/account" component={AccountContainer} />
               <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
             </IonRouterOutlet>
             <IonTabBar slot="bottom">

@@ -12,11 +12,11 @@ import {
 
 interface LoginProps {
   googleUser: {
-    displayName: String | null,
-    email: String | null,
-    photoURL: String | null,
-    refreshToken: String | null,
-    uid: String | null
+    displayName: string,
+    email: string,
+    photoURL: string,
+    refreshToken: string,
+    uid: string
   }
 }
 interface LoginState {}

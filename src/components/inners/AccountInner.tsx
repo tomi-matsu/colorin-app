@@ -6,6 +6,13 @@ import './AccountInner.scss';
 
 
 interface AccountInnerProps {
+  googleUser: {
+    displayName: string,
+    email: string,
+    photoURL: string,
+    refreshToken: string,
+    uid: string
+  }
 }
 
 
@@ -14,14 +21,26 @@ export class AccountInner extends React.Component<AccountInnerProps> {
     cfaSignOut().subscribe()
   }
 
+  public static defaultProps: AccountInnerProps = {
+    googleUser: {
+      displayName: "",
+      email: "",
+      photoURL: "",
+      refreshToken: "",
+      uid: ""
+    }
+  };
+
   render(){
+    let img = this.props.googleUser.photoURL
+
     return (
       <div className="account-container">
 
         <div className="account-container__account-image">
-          <img src="assets/icon/favicon.png" alt="" className="account-container__account-image-pic"/>
+          <img src={img} alt="" className="account-container__account-image-pic"/>
         </div>
-        <p className="account-container__account-name">松本　ひとみ</p>
+        <p className="account-container__account-name">{this.props.googleUser.displayName}</p>
 
         <div className="account-container__info">
           <p className="account-container__registration-num">登録数：288</p>

@@ -2,11 +2,11 @@ import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE } from '../actions/authAction'
 
 export interface authState {
   googleUser: {
-    displayName: String | null,
-    email: String | null,
-    photoURL: String | null,
-    refreshToken: String | null,
-    uid: String | null
+    displayName: string,
+    email: string,
+    photoURL: string,
+    refreshToken: string,
+    uid: string
   },
   isFetching: boolean,
   lastLogin: Date | null,
@@ -15,11 +15,11 @@ export interface authState {
 
 const initialState: authState = {
   googleUser: {
-    displayName: null,
-    email: null,
-    photoURL: null,
-    refreshToken: null,
-    uid: null
+    displayName: "",
+    email: "",
+    photoURL: "",
+    refreshToken: "",
+    uid: ""
   },
   isFetching: false,
   lastLogin: null,
