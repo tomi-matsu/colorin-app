@@ -4,10 +4,11 @@ import { add } from 'ionicons/icons';
 
 const Fab: React.FC = () => (
   <IonFab vertical="bottom" horizontal="end">
-    <IonFabButton color="secondary">
+    <IonFabButton color="secondary" routerLink="/registration">
       <IonIcon icon={ add } color="dark" />
     </IonFabButton>
   </IonFab>
+
 );
 
 export default Fab;

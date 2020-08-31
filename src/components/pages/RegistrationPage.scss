@@ -1,0 +1,65 @@
+.regist-page {
+  padding: 16px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__top-date {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  &__fav-icon {
+    font-size: 1.8rem;
+  }
+
+  &__img {
+    width: calc(100vw - 32px);
+    height: 190px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: red;
+    margin-bottom: 16px;
+  }
+
+  &__colors {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__color {
+    width: calc((100vw - 32px - 32px ) / 3);
+    height: 10vh;
+    border-radius: 8px;
+    padding-top: calc((10vh - 19px) / 2);
+    background-color: red;
+  }
+
+  &__color-label {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+  }
+
+  &__pallet-label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    small {
+      font-size: 1rem;
+      color: #C7C7C7;
+      margin-left: 10px;
+    }
+  }
+
+  &__pallet {
+    font-size: 1.4rem;
+    width: calc((100vw - 32px - 60px) / 7);
+  }
+}

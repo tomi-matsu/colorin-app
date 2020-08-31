@@ -18,7 +18,8 @@ export class Home extends React.Component<Props> {
   ionViewWillEnter() {
     console.log(this.props)
     console.log('%c==================components/pages/Home', 'color: blue')
-    this.props.handleGetItems()
+    // TODO: コメントアウト解除すること
+    // this.props.handleGetItems()
   }
 
   signOut() {
@@ -33,15 +34,6 @@ export class Home extends React.Component<Props> {
           <Segment />
           <IonContent>
             <HomeInner items={this.props.items} />
-            <IonButton
-              expand="full"
-              style={{ margin: 14 }}
-              onClick={e => {
-                this.signOut()
-              }}
-            >
-              byebye
-            </IonButton>
           </IonContent>
           <Fab />
         </IonPage>
