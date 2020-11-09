@@ -1,5 +1,6 @@
 import React from 'react';
 import { LoginHandler } from '../../container/LoginContainer';
+// import HomeContainer from '../../container/HomeContainer';
 import {
   IonPage,
   IonHeader,
@@ -12,11 +13,11 @@ import {
 
 interface LoginProps {
   googleUser: {
-    displayName: String | null,
-    email: String | null,
-    photoURL: String | null,
-    refreshToken: String | null,
-    uid: String | null
+    displayName: string,
+    email: string,
+    photoURL: string,
+    refreshToken: string,
+    uid: string
   }
 }
 interface LoginState {}
@@ -25,13 +26,13 @@ type Props =  LoginProps & LoginHandler
 
 export class Login extends React.Component<Props> {
 
-  async googleLogin() {
+  googleLogin() {
     this.props.googleLogin()
   }
 
   render() {
     // if (this.props.googleUser) {
-    //   return <HomeContainer />;
+      // return <HomeContainer />;
     // } else {
       return (
         <IonPage>

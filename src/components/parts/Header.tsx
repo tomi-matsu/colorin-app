@@ -1,19 +1,24 @@
 import React from 'react';
 import { IonHeader, IonTitle, IonToolbar } from '@ionic/react';
-import Segment from './Segment';
 
 interface HeaderProps {
+  title: string
 }
 
-const Header: React.FC<HeaderProps> = () => {
-  return (
-    <IonHeader translucent>
-      <IonToolbar>
-        <IonTitle>ホーム</IonTitle>
-      </IonToolbar>
-      <Segment />
-    </IonHeader>
-  );
+export class Header extends React.Component<HeaderProps> {
+  public static defaultProps: HeaderProps = {
+    title: ''
+  };
+
+  render(){
+    return (
+      <IonHeader translucent>
+        <IonToolbar>
+          <IonTitle>{this.props.title}</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+    );
+  }
 };
 
 export default Header;

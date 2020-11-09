@@ -33,20 +33,20 @@ export const googleLogin = (): Function => {
   return (dispatch: any) => {
     dispatch(authRequest())
     let googleUser: {
-      displayName: String | null,
-      email: String | null,
-      photoURL: String | null,
-      refreshToken: String | null,
-      uid: String | null
+      displayName: string,
+      email: string,
+      photoURL: string,
+      refreshToken: string,
+      uid: string
     }
     cfaSignIn('google.com').subscribe(
       (user: User) => {
         googleUser = {
-          displayName: user.displayName,
-          email: user.email,
-          photoURL: user.photoURL,
-          refreshToken: user.refreshToken,
-          uid: user.uid
+          displayName: user.displayName || "",
+          email: user.email || "",
+          photoURL: user.photoURL || "",
+          refreshToken: user.refreshToken || "",
+          uid: user.uid || ""
         }
         dispatch(authSuccess(googleUser))
       }
