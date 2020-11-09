@@ -19,7 +19,7 @@ export class Home extends React.Component<Props> {
     console.log(this.props)
     console.log('%c==================components/pages/Home', 'color: blue')
     // TODO: コメントアウト解除すること
-    // this.props.handleGetItems()
+    this.props.handleGetItems()
   }
 
   signOut() {
@@ -27,7 +27,7 @@ export class Home extends React.Component<Props> {
   }
 
   render(){
-    if (this.props.items) {
+    // if (this.props.items) {
       return (
         <IonPage>
           <Header title={'ホーム'} />
@@ -38,14 +38,14 @@ export class Home extends React.Component<Props> {
           <Fab />
         </IonPage>
       )
-    } else {
-      return (
-        <IonPage>
-          <Header />
-          <Fab />
-        </IonPage>
-      )
-    }
+    // } else {
+    //   return (
+    //     <IonPage>
+    //       <Header />
+    //       <Fab />
+    //     </IonPage>
+    //   )
+    // }
 
   }
 }

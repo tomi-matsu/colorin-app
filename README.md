@@ -9,7 +9,7 @@ npx cap open android
 <!-- 実機デバッグ -->
 ionic capacitor run android -l --external
 
-android prj を作り直した時は
+<!-- android prj を作り直した時は -->
 ・android/app に google-services.json を追加
 ・android/app/src/main/java/MainActivity.java に
 ```

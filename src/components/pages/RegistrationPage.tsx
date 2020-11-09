@@ -34,13 +34,27 @@ export class Registration extends React.Component<RegistrationProps> {
 
             <div>
               <label className="regist-page__pallet-label">パレット<small>最大3つまで選択可能</small></label>
-              <div className="regist-page__pallet">赤</div>
-              <div className="regist-page__pallet">黄</div>
-              <div className="regist-page__pallet">緑</div>
-              <div className="regist-page__pallet">青</div>
-              <div className="regist-page__pallet">茶</div>
-              <div className="regist-page__pallet">黒</div>
-              <div className="regist-page__pallet">白</div>
+              <div className="regist-page__pallets">
+                <input type="checkbox" />
+                <label className="regist-page__pallet">赤</label>
+                <input type="checkbox" />
+                <label className="regist-page__pallet">黄</label>
+                <input type="checkbox" />
+                <label className="regist-page__pallet">緑</label>
+                <input type="checkbox" />
+                <label className="regist-page__pallet">青</label>
+                <input type="checkbox" />
+                <label className="regist-page__pallet">茶</label>
+                <input type="checkbox" />
+                <label className="regist-page__pallet">黒</label>
+                <input type="checkbox" />
+                <label className="regist-page__pallet">白</label>
+              </div>
+            </div>
+
+            <div className="regist-page_memo">
+              <label className="regist-page_memo-label">メモ</label>
+              <input type="textarea"/>
             </div>
           </div>
         </IonContent>

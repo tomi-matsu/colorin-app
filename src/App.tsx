@@ -18,6 +18,7 @@ import { AppHandler } from './container/AppContainer';
 import LoginContainer from './container/LoginContainer';
 import HomeContainer from './container/HomeContainer';
 import Favorite from './components/pages/FavoritePage';
+import Registration from './components/pages/RegistrationPage';
 import AccountContainer from './container/AccountContainer';
 
 import './App.scss';
@@ -66,6 +67,8 @@ class App extends React.Component<Props> {
 
   render() {
     // return (
+    console.log('heyajsdfhgjkamsnjbhejadjkns');
+
     return this.props.isLogin ? (
       <IonApp>
         <IonReactRouter>
@@ -73,6 +76,7 @@ class App extends React.Component<Props> {
               <Route path="/home" component={HomeContainer} exact={true} />
               <Route path="/favorite" component={Favorite} exact={true} />
               <Route path="/account" component={AccountContainer} />
+              <Route path="/registration" component={Registration} />
           </IonRouterOutlet>
           {/* <LoginContainer></LoginContainer> */}
           <IonTabs>

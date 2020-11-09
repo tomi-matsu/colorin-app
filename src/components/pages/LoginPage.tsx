@@ -1,5 +1,6 @@
 import React from 'react';
 import { LoginHandler } from '../../container/LoginContainer';
+// import HomeContainer from '../../container/HomeContainer';
 import {
   IonPage,
   IonHeader,
@@ -25,13 +26,13 @@ type Props =  LoginProps & LoginHandler
 
 export class Login extends React.Component<Props> {
 
-  async googleLogin() {
+  googleLogin() {
     this.props.googleLogin()
   }
 
   render() {
     // if (this.props.googleUser) {
-    //   return <HomeContainer />;
+      // return <HomeContainer />;
     // } else {
       return (
         <IonPage>

@@ -58,8 +58,35 @@
     }
   }
 
+  &__pallets {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+  }
+
   &__pallet {
     font-size: 1.4rem;
     width: calc((100vw - 32px - 60px) / 7);
+    text-align: center;
+    width: 4rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: #A0A0A0 1px solid;
+    line-height: 1.8rem;
   }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  &_memo {
+    margin-top: 30px;
+  }
+
+  &_memo-label {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
 }
